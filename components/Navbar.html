@@ -1,0 +1,125 @@
+<script src="https://cdn.tailwindcss.com"></script>
+
+<nav class="bg-white shadow-lg fixed w-full top-0 left-0 border-2 border-blue-600 rounded-full mx-auto my-4 max-w-7xl">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo section with adjusted padding -->
+            <div class="flex-shrink-0 transition-transform duration-300 hover:scale-110 ml-2">
+                <a href="#" class="flex items-center">
+                    <img class="h-80 w-auto" src="../images/Logo_1.png" alt="Logo">
+                    <span class="ml-2 text-xl font-bold text-gray-800"></span>
+                </a>
+            </div>
+
+            <!-- Updated Center Navigation Items -->
+            <div class="hidden md:flex items-center justify-center flex-1">
+                <div class="flex space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-bold relative group">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-bold relative group">
+                        About
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    </a>
+                    
+                    <!-- Subject-Class Dropdown -->
+                    <div class="relative group">
+                        <button class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-bold inline-flex items-center">
+                            Subject-Class
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <div class="py-1">
+                                <a href="Studentadmission.html" class="block px-4 py-2 text-sm font-bold text-gray-700 hover:bg-gray-100">Student-Admission</a>
+                                <a href="Tutoradmission.html" class="block px-4 py-2 text-sm font-bold text-gray-700 hover:bg-gray-100">Tutor-Registration</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-bold relative group">
+                        Fee Submission
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    </a>
+
+                    <!-- How to Use Hazara Button -->
+
+                    <a href="#" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-bold relative group mr-2">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    </a>
+
+                    <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105">
+                        How to Use Hazara
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center mr-2">
+                <button class="mobile-menu-button p-2 rounded-md text-gray-600 hover:text-gray-900 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Updated Mobile menu with rounded corners -->
+    <div class="md:hidden hidden mobile-menu bg-white rounded-b-3xl border-t border-gray-200">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="#" class="block px-3 py-2 text-base font-bold text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg">Home</a>
+            <a href="#" class="block px-3 py-2 text-base font-bold text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg">About</a>
+            
+            <!-- Mobile Subject-Class Dropdown -->
+            <div class="relative" x-data="{ open: false }">
+                <button @click="open = !open" class="w-full text-left px-3 py-2 text-base font-bold text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg flex justify-between items-center">
+                    Subject-Class
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="hidden" id="mobile-dropdown">
+                    <a href="#" class="block pl-6 py-2 text-base font-bold text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg">Class 6</a>
+                    <a href="#" class="block pl-6 py-2 text-base font-bold text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg">Class 7</a>
+                    <a href="#" class="block pl-6 py-2 text-base font-bold text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg">Class 8</a>
+                    <a href="#" class="block pl-6 py-2 text-base font-bold text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg">Class 9</a>
+                    <a href="#" class="block pl-6 py-2 text-base font-bold text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg">Class 10</a>
+                </div>
+            </div>
+
+            <a href="#" class="block px-3 py-2 text-base font-bold text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg">Fee Submission</a>
+            
+            <!-- Mobile How to Use Hazara Button -->
+            <a href="#" class="block mx-3 px-3 py-2 text-base font-bold bg-blue-600 text-white rounded-full hover:bg-blue-700">
+                How to Use Hazara
+            </a>
+
+            <a href="#" class="block px-3 py-2 text-base font-bold text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Add a wrapper div to create space for the fixed navbar -->
+<div class="h-24"></div>
+
+<script>
+    // Mobile menu toggle
+    const btn = document.querySelector('.mobile-menu-button');
+    const menu = document.querySelector('.mobile-menu');
+    
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+
+    // Mobile dropdown toggle
+    const dropdownButton = document.querySelector('[x-data] button');
+    const dropdownContent = document.getElementById('mobile-dropdown');
+    
+    dropdownButton.addEventListener('click', () => {
+        dropdownContent.classList.toggle('hidden');
+    });
+</script>

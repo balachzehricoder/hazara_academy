@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutor Academy - Account Selection</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    let selectedType = null; // Variable to store the selected account type
+
+    function selectButton(type) {
+      // Reset both buttons to their default background
+      document.getElementById('studentButton').classList.remove('bg-blue-100', 'text-blue-500');
+      document.getElementById('tutorButton').classList.remove('bg-blue-100', 'text-blue-500');
+
+      // Highlight the selected button and store the selection
+      if (type === 'student') {
+        document.getElementById('studentButton').classList.add('bg-blue-100', 'text-blue-500');
+        selectedType = 'student';
+      } else if (type === 'tutor') {
+        document.getElementById('tutorButton').classList.add('bg-blue-100', 'text-blue-500');
+        selectedType = 'tutor';
+      }
+    }
+
+    function continueAction() {
+      if (selectedType === 'student') {
+        window.location.href = 'Studentadmission'; // Redirect to Studentadmission.html
+      } else if (selectedType === 'tutor') {
+        window.location.href = 'Tutoradmission'; // Redirect to Tutoradmission.html
+      } else {
+        alert('Please select an account type before continuing.');
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Main Container -->
+  <div class="flex flex-col lg:flex-row items-center justify-center h-screen">
+    <!-- Left Section -->
+    <div class="lg:w-1/2 bg-blue-700 text-white p-10 lg:p-20">
+      <h1 class="text-4xl font-bold mb-6">Find the Perfect Tutor or Start Teaching Today!</h1>
+      <p class="text-lg mb-4">
+        Our platform connects students with qualified tutors for personalized learning. Whether you're here to learn or teach, we make the process simple and effective.
+      </p>
+      <div class="flex space-x-2 mt-8">
+        <div class="w-4 h-1 bg-white rounded"></div>
+        <div class="w-4 h-1 bg-white rounded opacity-50"></div>
+        <div class="w-4 h-1 bg-white rounded opacity-50"></div>
+      </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="lg:w-1/2 bg-white p-10 lg:p-20">
+      <h2 class="text-2xl font-bold mb-4">Choose Your Account Type</h2>
+      <p class="text-gray-500 mb-8">
+        Are you here to learn or teach? Select the option that best fits your goals to get started.
+      </p>
+
+      <!-- Account Type Options -->
+      <div class="space-y-4">
+        <!-- Student Option -->
+        <div id="studentButton" onclick="selectButton('student')" class="flex items-center p-4 bg-white border border-blue-500 rounded-lg cursor-pointer hover:shadow-lg transition">
+          <div class="w-10 h-10 bg-blue-700 text-white flex items-center justify-center rounded-full mr-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 4H7a2 2 0 01-2-2V5a2 2 0 012-2h10a2 2 0 012 2v13a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold">Student</h3>
+            <p class="text-gray-500 text-sm">I want to find a tutor and improve my skills.</p>
+          </div>
+        </div>
+
+        <!-- Tutor Option -->
+        <div id="tutorButton" onclick="selectButton('tutor')" class="flex items-center p-4 bg-white border border-blue-500 rounded-lg cursor-pointer hover:shadow-lg transition">
+          <div class="w-10 h-10 bg-blue-700 text-white flex items-center justify-center rounded-full mr-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M5 10h14a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2-2-2z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold">Tutor</h3>
+            <p class="text-gray-500 text-sm">I want to share my knowledge and teach students.</p>
+          </div>
+        </div>
+      </div>
+      <button type="button" onclick="window.history.back()" class="px-6 py-3 bg-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-400 transition duration-300">
+        Back
+      </button>
+      <!-- Next Step Button -->
+      <button onclick="continueAction()" class="mt-8 px-6 py-3 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition duration-300">
+        Continue
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>

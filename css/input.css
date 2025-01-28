@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for dropdown functionality */
+@layer components {
+    .group:hover .group-hover\:block {
+        display: block;
+    }
+
+    .group:hover .group-hover\:rotate-180 {
+        transform: rotate(180deg);
+    }
+}

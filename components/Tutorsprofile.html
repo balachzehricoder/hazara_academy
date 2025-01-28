@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
+<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+</head>
+
+
+<style>
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .animate-fadeInUp {
+        animation: fadeInUp 0.5s ease-out forwards;
+    }
+    .card-hover {
+        transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<body>
+    <nav class="sticky top-0 left-0 right-0 z-50 transition-transform duration-300 bg-white" id="navbar">
+        <div class="bg-white shadow-lg border-2 border-blue-600 rounded-full mx-4 my-4 max-w-7xl lg:mx-auto relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex justify-between items-center h-16">
+                    <!-- Logo Section -->
+                    <div class="flex-shrink-0 ml-2">
+                        <a href="index.html" class="flex items-center">
+                            <img class="h-64 w-auto" src="../images/Logo_1.png" alt="Logo">
+                        </a>
+                    </div>
+    
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex items-center justify-center flex-1">
+                        <div class="flex space-x-8">
+                            <a href="index.html" class="relative text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-bold group">
+                                Home
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 group-focus:scale-x-100 group-active:scale-x-100 transition-transform origin-left duration-300"></span>
+                            </a>
+                            <a href="Aboutus.html" class="relative text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-bold group">
+                                About
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 group-focus:scale-x-100 group-active:scale-x-100 transition-transform origin-left duration-300"></span>
+                            </a>
+                            <a href="Founder.html" class="relative text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-bold group">
+                                Our Founder
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 group-focus:scale-x-100 group-active:scale-x-100 transition-transform origin-left duration-300"></span>
+                            </a>
+                            <a href="AcadmicJourney.html" class="relative text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-bold group">
+                                Academic Journey
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 group-focus:scale-x-100 group-active:scale-x-100 transition-transform origin-left duration-300"></span>
+                            </a>
+
+
+                            <a href="javascript:void(0);" onclick="toggleSection('whyChooseUs')" class="relative text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-bold group">
+                                Why Choose us
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 group-focus:scale-x-100 group-active:scale-x-100 transition-transform origin-left duration-300"></span>
+                            </a>
+
+                            
+                           
+
+                            <a href="Login.html" class="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-green-700 transition duration-300 ease-in-out transform hover:scale-105">
+                                Login
+                            </a>
+                            <a href="Select.html" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105">
+                                Sign Up
+                            </a>
+                           
+                        </div>
+                    </div>
+    
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center mr-2">
+                        <button id="mobile-menu-button" class="p-2 rounded-md text-gray-600 hover:text-gray-900 focus:outline-none">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden absolute bg-white left-0 right-0 border-t border-gray-200 shadow-lg rounded-b-lg mt-2 z-40">
+                <div class="px-4 py-2 space-y-2">
+                    <a href="Home.html" class="block px-3 py-2 text-base font-bold text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg">Home</a>
+                    <a href="Aboutus.html" class="block px-3 py-2 text-base font-bold text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg">About</a>
+
+                    <a href="AcadmicJourney.html" class="block px-3 py-2 text-base font-bold text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg">Academy Journey</a>
+                    <a href="javascript:void(0);" onclick="toggleSection('whyChooseUs')" class="block px-3 py-2 text-base font-bold text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg">Why Choose us</a>
+                    <a href="Founder.html" class="block px-3 py-2 text-base font-bold text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg">Our Founder</a>
+                    <a href="Login.html" class="block px-3 py-2 text-base font-bold text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg">Login</a>
+                    <a href="Select.html" class="block px-3 py-2 text-base font-bold text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+<!-- ------------------------------------- -->
+
+
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    
+
+    <main class="flex-grow container mx-auto py-12 px-4">
+        <h2 class="text-4xl font-bold mb-8 text-center text-gray-800 animate-float">Our Tutors</h2>
+        <div class="w-16 h-1 bg-blue-500 mx-auto mb-8"></div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="card-container">
+            <!-- User Profile Card 1 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.1s;">
+                <div class="relative overflow-hidden">
+                    <img src="../images/63.jpg" alt="User 1" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">John Doe</h3>
+                        <p class="text-blue-300 font-semibold">Software Developer</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Passionate about creating elegant solutions to complex problems. Always learning and exploring new technologies.</p>
+                    <div class="flex justify-center space-x-4">
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+
+            <!-- User Profile Card 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.2s;">
+                <div class="relative overflow-hidden">
+                    <img src="../images/63.jpg" alt="User 2" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Jane Smith</h3>
+                        <p class="text-blue-300 font-semibold">UX Designer</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Crafting intuitive and beautiful user experiences. Believes in the power of design to solve problems and delight users.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-pink-500 hover:text-pink-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.27 20.1H3.65V9.24h3.62V20.1zM5.47 7.76h-.03c-1.22 0-2-.83-2-1.87 0-1.06.8-1.87 2.05-1.87 1.24 0 2 .8 2.02 1.87 0 1.04-.78 1.87-2.05 1.87zM20.34 20.1h-3.63v-5.8c0-1.45-.52-2.45-1.83-2.45-1 0-1.6.67-1.87 1.32-.1.23-.11.55-.11.88v6.05H9.28s.05-9.82 0-10.84h3.63v1.54a3.6 3.6 0 0 1 3.26-1.8c2.39 0 4.18 1.56 4.18 4.89v6.21z"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Profile Card 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.3s;">
+                <div class="relative overflow-hidden">
+                    <img src="../images/63.jpg" alt="User 3" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Mike Johnson</h3>
+                        <p class="text-blue-300 font-semibold">Product Manager</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Bridging the gap between user needs and technical possibilities. Passionate about building products that make a difference.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.27 20.1H3.65V9.24h3.62V20.1zM5.47 7.76h-.03c-1.22 0-2-.83-2-1.87 0-1.06.8-1.87 2.05-1.87 1.24 0 2 .8 2.02 1.87 0 1.04-.78 1.87-2.05 1.87zM20.34 20.1h-3.63v-5.8c0-1.45-.52-2.45-1.83-2.45-1 0-1.6.67-1.87 1.32-.1.23-.11.55-.11.88v6.05H9.28s.05-9.82 0-10.84h3.63v1.54a3.6 3.6 0 0 1 3.26-1.8c2.39 0 4.18 1.56 4.18 4.89v6.21z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-gray-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Profile Card 4 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.4s;">
+                <div class="relative overflow-hidden">
+                    <img src="https://placekitten.com/303/303" alt="User 4" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Emily Brown</h3>
+                        <p class="text-blue-300 font-semibold">Marketing Specialist</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Crafting compelling stories and driving growth through innovative marketing strategies. Always on the lookout for the next big trend.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-red-500 hover:text-red-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.4s;">
+                <div class="relative overflow-hidden">
+                    <img src="https://placekitten.com/303/303" alt="User 4" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Emily Brown</h3>
+                        <p class="text-blue-300 font-semibold">Marketing Specialist</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Crafting compelling stories and driving growth through innovative marketing strategies. Always on the lookout for the next big trend.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-red-500 hover:text-red-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.4s;">
+                <div class="relative overflow-hidden">
+                    <img src="https://placekitten.com/303/303" alt="User 4" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Emily Brown</h3>
+                        <p class="text-blue-300 font-semibold">Marketing Specialist</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Crafting compelling stories and driving growth through innovative marketing strategies. Always on the lookout for the next big trend.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-red-500 hover:text-red-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.4s;">
+                <div class="relative overflow-hidden">
+                    <img src="https://placekitten.com/303/303" alt="User 4" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Emily Brown</h3>
+                        <p class="text-blue-300 font-semibold">Marketing Specialist</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Crafting compelling stories and driving growth through innovative marketing strategies. Always on the lookout for the next big trend.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-red-500 hover:text-red-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.4s;">
+                <div class="relative overflow-hidden">
+                    <img src="https://placekitten.com/303/303" alt="User 4" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Emily Brown</h3>
+                        <p class="text-blue-300 font-semibold">Marketing Specialist</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Crafting compelling stories and driving growth through innovative marketing strategies. Always on the lookout for the next big trend.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-red-500 hover:text-red-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.4s;">
+                <div class="relative overflow-hidden">
+                    <img src="https://placekitten.com/303/303" alt="User 4" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Emily Brown</h3>
+                        <p class="text-blue-300 font-semibold">Marketing Specialist</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Crafting compelling stories and driving growth through innovative marketing strategies. Always on the lookout for the next big trend.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-red-500 hover:text-red-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.4s;">
+                <div class="relative overflow-hidden">
+                    <img src="https://placekitten.com/303/303" alt="User 4" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Emily Brown</h3>
+                        <p class="text-blue-300 font-semibold">Marketing Specialist</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Crafting compelling stories and driving growth through innovative marketing strategies. Always on the lookout for the next big trend.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-red-500 hover:text-red-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.4s;">
+                <div class="relative overflow-hidden">
+                    <img src="https://placekitten.com/303/303" alt="User 4" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Emily Brown</h3>
+                        <p class="text-blue-300 font-semibold">Marketing Specialist</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Crafting compelling stories and driving growth through innovative marketing strategies. Always on the lookout for the next big trend.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-red-500 hover:text-red-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.4s;">
+                <div class="relative overflow-hidden">
+                    <img src="https://placekitten.com/303/303" alt="User 4" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Emily Brown</h3>
+                        <p class="text-blue-300 font-semibold">Marketing Specialist</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Crafting compelling stories and driving growth through innovative marketing strategies. Always on the lookout for the next big trend.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-red-500 hover:text-red-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.4s;">
+                <div class="relative overflow-hidden">
+                    <img src="https://placekitten.com/303/303" alt="User 4" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Emily Brown</h3>
+                        <p class="text-blue-300 font-semibold">Marketing Specialist</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Crafting compelling stories and driving growth through innovative marketing strategies. Always on the lookout for the next big trend.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-red-500 hover:text-red-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.4s;">
+                <div class="relative overflow-hidden">
+                    <img src="https://placekitten.com/303/303" alt="User 4" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Emily Brown</h3>
+                        <p class="text-blue-300 font-semibold">Marketing Specialist</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Crafting compelling stories and driving growth through innovative marketing strategies. Always on the lookout for the next big trend.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-red-500 hover:text-red-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.4s;">
+                <div class="relative overflow-hidden">
+                    <img src="https://placekitten.com/303/303" alt="User 4" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Emily Brown</h3>
+                        <p class="text-blue-300 font-semibold">Marketing Specialist</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Crafting compelling stories and driving growth through innovative marketing strategies. Always on the lookout for the next big trend.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-red-500 hover:text-red-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.4s;">
+                <div class="relative overflow-hidden">
+                    <img src="https://placekitten.com/303/303" alt="User 4" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Emily Brown</h3>
+                        <p class="text-blue-300 font-semibold">Marketing Specialist</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Crafting compelling stories and driving growth through innovative marketing strategies. Always on the lookout for the next big trend.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-red-500 hover:text-red-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.4s;">
+                <div class="relative overflow-hidden">
+                    <img src="https://placekitten.com/303/303" alt="User 4" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Emily Brown</h3>
+                        <p class="text-blue-300 font-semibold">Marketing Specialist</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Crafting compelling stories and driving growth through innovative marketing strategies. Always on the lookout for the next big trend.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-red-500 hover:text-red-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.4s;">
+                <div class="relative overflow-hidden">
+                    <img src="https://placekitten.com/303/303" alt="User 4" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Emily Brown</h3>
+                        <p class="text-blue-300 font-semibold">Marketing Specialist</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Crafting compelling stories and driving growth through innovative marketing strategies. Always on the lookout for the next big trend.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-red-500 hover:text-red-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.4s;">
+                <div class="relative overflow-hidden">
+                    <img src="https://placekitten.com/303/303" alt="User 4" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Emily Brown</h3>
+                        <p class="text-blue-300 font-semibold">Marketing Specialist</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Crafting compelling stories and driving growth through innovative marketing strategies. Always on the lookout for the next big trend.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-red-500 hover:text-red-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-fadeInUp" style="animation-delay: 0.4s;">
+                <div class="relative overflow-hidden">
+                    <img src="https://placekitten.com/303/303" alt="User 4" class="w-full h-64 object-cover object-center img-hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 p-4">
+                        <h3 class="font-bold text-xl text-white mb-1">Emily Brown</h3>
+                        <p class="text-blue-300 font-semibold">Marketing Specialist</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-4">Crafting compelling stories and driving growth through innovative marketing strategies. Always on the lookout for the next big trend.</p>
+                    <div class="flex justify-center space-x-4">
+                        <!-- <a href="#" class="text-red-500 hover:text-red-700 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out social-icons">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a> -->
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 shadow-lg hover:shadow-2xl">
+                            Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+       
+
+      
+
+        <div class="flex justify-center mt-8 space-x-2">
+            <button id="prev-page" class="px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded-md" disabled>
+                &lt;
+            </button>
+            <div id="pagination-buttons" class="flex space-x-2"></div>
+            <button id="next-page" class="px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded-md">
+                &gt;
+            </button>
+        </div>
+        <p class="text-center mt-4">Results: <span id="results-info"></span></p>
+        
+
+       
+
+       
+
+       
+
+        <!-- Demo Picture Section -->
+       
+    </main>
+
+    
+    <footer class="relative bg-blueGray-200 pt-8 pb-6">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-wrap text-left lg:text-left">
+            <div class="w-full lg:w-6/12 px-4">
+              <h4 class="text-3xl fonat-semibold text-blueGray-700">About Us</h4>
+              <h5 class="text-lg mt-0 mb-2 text-blueGray-600">
+                  Hazara Academy, founded by Waqas A Khan, is an online educational platform offering live classes for students across all grades and subjects. With a focus on interactive learning, it connects students with expert tutors and enables parents to monitor their progress.
+              </h5>
+              <div class="mt-6 lg:mb-0 mb-6">
+                <button class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                  <i class="fab fa-twitter"></i></button><button class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                  <i class="fab fa-facebook-square"></i></button><button class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                  <i class="fab fa-dribbble"></i></button><button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                  <i class="fab fa-github"></i>
+                </button>
+              </div>
+            </div>
+            <div class="w-full lg:w-6/12 px-4">
+              <div class="flex flex-wrap items-top mb-6">
+                <div class="w-full lg:w-4/12 px-4 ml-auto">
+                  <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Useful Links</span>
+                  <ul class="list-unstyled">
+                    <li>
+                      <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/presentation?ref=njs-profile">About Us</a>
+                    </li>
+                    <li>
+                      <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://blog.creative-tim.com?ref=njs-profile">Blog</a>
+                    </li>
+                    <li>
+                      <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.github.com/creativetimofficial?ref=njs-profile">Github</a>
+                    </li>
+                    <li>
+                      <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile">Free Products</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="w-full lg:w-4/12 px-4">
+                  <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Contact Us</span>
+                  <ul class="list-unstyled">
+                      <li>
+                          <a href="https://wa.me/923009119779" 
+                             target="_blank" 
+                             class="text-blueGray-600 hover:text-green-600 font-semibold block pb-2 text-sm inline-flex items-center gap-2 transition duration-300">
+                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                              </svg>
+                              +92 300 1234567
+                          </a>
+                      </li>
+                      <li>
+                          <a href="mailto:info@hazaraacademy.com" 
+                             class="text-blueGray-600 hover:text-blue-600 font-semibold block pb-2 text-sm inline-flex items-center gap-2 transition duration-300">
+                              <!-- Alternative Email Icon -->
+                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                              </svg>
+                              .com
+                          </a>
+                      </li>
+                      <li>
+                          <a href="https://maps.app.goo.gl/KEHQzfXfGpVpHypc9" 
+                             target="_blank"
+                             class="text-blueGray-600 hover:text-red-600 font-semibold block pb-2 text-sm inline-flex items-center gap-2 transition duration-300">
+                              <!-- Map Location Icon -->
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                              </svg>
+                              Hazara Academy,Pakistan
+                          </a>
+                      </li>
+                   
+                  </ul>
+                </div>
+      
+                
+              </div>
+            </div>
+          </div>
+          <hr class="my-6 border-blueGray-300">
+          <div class="flex flex-wrap items-center md:justify-between justify-center">
+            <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+              <div class="text-sm text-blueGray-500 font-semibold py-1">
+                Copyright © <span id="get-current-year">2025</span><a href="" class="text-blueGray-500 hover:text-gray-800" target="_blank"> WsWebSolutions All Rights Reserved Designed & Dev
+                <a href="" class="text-blueGray-500 hover:text-blueGray-800"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+         <script src="../js/main.js"></script>
+</body>
+</html>
