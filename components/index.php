@@ -1,12 +1,62 @@
-<?php include 'nav.php' ?>
-    
+<?php include 'nav.php'; ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn from the Best Tutors</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 
+  <style>
+    /* Preloader Styles */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #3498db;
+      border-top: 5px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Hide Content Initially */
+    #content {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Page Content -->
+  <div id="content">
     <!-- Hero Section -->
-
-    <!-- Hero Section 1 - Clean & Minimal -->
     <div class="relative bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto  pb-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto pb-16 px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
                 <!-- Left Content -->
                 <div class="lg:w-1/2 space-y-8">
@@ -17,7 +67,7 @@
                     <p class="text-lg text-gray-600 leading-relaxed">
                         Join thousands of students who are already learning from expert mentors. Start your journey today.
                     </p>
-    
+
                     <!-- Rounded Search Bar -->
                     <div class="mt-6">
                         <form class="relative flex items-center">
@@ -31,7 +81,7 @@
                         </form>
                     </div>
                 </div>
-    
+
                 <!-- Right Content -->
                 <div class="lg:w-1/2">
                     <img src="https://cdni.iconscout.com/illustration/premium/thumb/online-learning-4487137-3726239.png" 
@@ -41,6 +91,24 @@
             </div>
         </div>
     </div>
+  </div>
+
+  <!-- JavaScript for Preloader -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Simulate Loading Time (Remove this line in production)
+        setTimeout(() => {
+            document.getElementById("preloader").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("content").style.opacity = "1";
+            }, 100);
+        }, 1500); // Simulated delay (1.5s)
+    });
+  </script>
+</body>
+</html>
+
 
 <!----------------------- -->
 <div class="w-full min-h-screen flex flex-col justify-center items-center px-4 py-12">
