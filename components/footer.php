@@ -1,99 +1,105 @@
-
-
-<footer class="relative bg-blueGray-200 pt-8 pb-6">
+<footer class="bg-[#0a0a29] text-white pt-16 pb-8">
   <div class="container mx-auto px-4">
-    <div class="flex flex-wrap text-left lg:text-left">
-      <div class="w-full lg:w-6/12 px-4">
-        <h4 class="text-3xl fonat-semibold text-blueGray-700">About Us</h4>
-        <h5 class="text-lg mt-0 mb-2 text-blueGray-600">
-            Hazara Academy, founded by Waqas A Khan, is an online educational platform offering live classes for students across all grades and subjects. With a focus on interactive learning, it connects students with expert tutors and enables parents to monitor their progress.
-        </h5>
-        <div class="mt-6 lg:mb-0 mb-6">
-          <button class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <i class="fab fa-twitter"></i></button><button class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <i class="fab fa-facebook-square"></i></button><button class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <i class="fab fa-dribbble"></i></button><button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <i class="fab fa-github"></i>
-          </button>
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <!-- Brand Section -->
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Hazara Academy</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Founded by Waqas A Khan, is an online educational platform offering live classes for students across all grades and subjects. With a focus on interactive learning.
+          </p>
         </div>
-      </div>
-      <div class="w-full lg:w-6/12 px-4">
-        <div class="flex flex-wrap items-top mb-6">
-          <div class="w-full lg:w-4/12 px-4 ml-auto">
-            <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Useful Links</span>
-            <ul class="list-unstyled">
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/presentation?ref=njs-profile">About Us</a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://blog.creative-tim.com?ref=njs-profile">Blog</a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.github.com/creativetimofficial?ref=njs-profile">Github</a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile">Free Products</a>
-              </li>
-            </ul>
-          </div>
-          <div class="w-full lg:w-4/12 px-4">
-            <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Contact Us</span>
-            <ul class="list-unstyled">
-                <li>
-                    <a href="https://wa.me/923009119779" 
-                       target="_blank" 
-                       class="text-blueGray-600 hover:text-green-600 font-semibold block pb-2 text-sm inline-flex items-center gap-2 transition duration-300">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                        </svg>
-                        +92 300 1234567
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:info@hazaraacademy.com" 
-                       class="text-blueGray-600 hover:text-blue-600 font-semibold block pb-2 text-sm inline-flex items-center gap-2 transition duration-300">
-                        <!-- Alternative Email Icon -->
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                        </svg>
-                        .com
-                    </a>
-                </li>
-                <li>
-                    <a href="https://maps.app.goo.gl/KEHQzfXfGpVpHypc9" 
-                       target="_blank"
-                       class="text-blueGray-600 hover:text-red-600 font-semibold block pb-2 text-sm inline-flex items-center gap-2 transition duration-300">
-                        <!-- Map Location Icon -->
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                        </svg>
-                        Hazara Academy,Pakistan
-                    </a>
-                </li>
-             
-            </ul>
-          </div>
-
+        <!-- Social Icons -->
+        <div class="flex space-x-4">
+          <a href="#" class="hover:scale-110 transition-transform">
+            <div class="bg-gray-800 p-2 rounded-full hover:bg-blue-600">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </div>
+          </a>
+          <a href="#" class="hover:scale-110 transition-transform">
+            <div class="bg-gray-800 p-2 rounded-full hover:bg-blue-400">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </div>
+          </a>
+          <a href="#" class="hover:scale-110 transition-transform">
+            <div class="bg-gray-800 p-2 rounded-full hover:bg-pink-600">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.995 16.979c-.127.409-.354.715-.687.918-.333.203-.745.305-1.236.305-.368 0-.699-.056-.994-.17a2.775 2.775 0 01-.797-.459 2.68 2.68 0 01-.559-.706 3.161 3.161 0 01-.321-.918h-.076c-.127.409-.354.715-.687.918-.333.203-.745.305-1.236.305-.368 0-.699-.056-.994-.17a2.775 2.775 0 01-.797-.459 2.68 2.68 0 01-.559-.706 3.161 3.161 0 01-.321-.918h-.076c-.127.409-.354.715-.687.918-.333.203-.745.305-1.236.305-.368 0-.699-.056-.994-.17a2.775 2.775 0 01-.797-.459 2.68 2.68 0 01-.559-.706 3.161 3.161 0 01-.321-.918h-.076c-.127.409-.354.715-.687.918-.333.203-.745.305-1.236.305-.368 0-.699-.056-.994-.17a2.775 2.775 0 01-.797-.459L4 16.979l1.92-.592c.2.203.436.365.71.488.273.123.574.184.904.184.33 0 .63-.061.904-.184.273-.123.509-.285.71-.488l1.92.592c.2.203.436.365.71.488.273.123.574.184.904.184.33 0 .63-.061.904-.184.273-.123.509-.285.71-.488l1.92.592c.2.203.436.365.71.488.273.123.574.184.904.184.33 0 .63-.061.904-.184.273-.123.509-.285.71-.488l1.92.592z"/>
+              </svg>
+            </div>
+          </a>
           
         </div>
       </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-lg font-semibold mb-6 text-gray-100">Quick Links</h4>
+        <ul class="space-y-4">
+          <li><a href="#" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Our Founder</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Why Choose us</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h4 class="text-lg font-semibold mb-6 text-gray-100">Contact Us</h4>
+        <ul class="space-y-4">
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            <span class="text-gray-300">+92 300 1234567</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <span class="text-gray-300">info@hazaraacademy.com</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span class="text-gray-300">Hazara Academy, Pakistan</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div>
+        <h4 class="text-lg font-semibold mb-6 text-gray-100">Newsletter</h4>
+        <p class="text-gray-300 mb-4">Subscribe to our newsletter for updates</p>
+        <form class="space-y-3">
+          <input type="email" placeholder="Your email address" 
+                 class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-gray-300">
+          <button class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+            Subscribe
+          </button>
+        </form>
+      </div>
     </div>
-    <hr class="my-6 border-blueGray-300">
-    <div class="flex flex-wrap items-center md:justify-between justify-center">
-      <div class="w-full md:w-4/12 px-4 mx-auto text-center">
-        <div class="text-sm text-blueGray-500 font-semibold py-1">
-          Copyright © <span id="get-current-year">2025</span><a href="" class="text-blueGray-500 hover:text-gray-800" target="_blank"> WsWebSolutions All Rights Reserved Designed & Dev
-          <a href="" class="text-blueGray-500 hover:text-blueGray-800"></a>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-800 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm">
+          © 2025 WsWebSolutions. All rights reserved.
+        </p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+          <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+          <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
         </div>
       </div>
     </div>
   </div>
 </footer>
-
-   <script src="../js/main.js"></script>
-</body>
-</html>
